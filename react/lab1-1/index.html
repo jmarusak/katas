@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <script>
+    function validateForm() {
+      let isFormComplete = true;
+
+      var x = document.forms["identification"]["firstName"].value
+      if (x == "") {
+        alert("First Name is mandatory field");
+        isFormComplete = false;
+      }
+
+      x = document.forms["identification"]["lastName"].value
+      if (x == "") {
+        alert("Last Name is mandatory field");
+        isFormComplete = false;
+      }
+
+      x = document.forms["identification"]["gender"].value
+      if (x == "") {
+        alert("Gender Type select is a mandatory radio button");
+        isFormComplete = false;
+      }
+
+      let emp1 = document.forms["identification"]["employment1"].checked
+      let emp2 = document.forms["identification"]["employment2"].checked
+      if (!emp1 && !emp2) {
+        alert("Employment is a mandatory checkbox button");
+        isFormComplete = false;
+      }
+
+      x = document.forms["identification"]["carType"].value
+      if (x == "selectcar") {
+        alert("Please select a car type");
+        isFormComplete = false;
+      }
+
+      return isFormComplete;
+    }
+  </script>
+</head>
+<body>
+  <p>Please enter the following mandatory information</p>
+  <form name="identification" onsubmit="return validateForm()">
+
+    <p>First Name:<input type="text" id="firstName" /></p>
+    <p>Last Name:<input type="text" id="lastName" /></p>
+
+    <p>Gender Type:</p>
+    <input type="radio" id="gender1" name="gender" value="male">Male<br />
+    <input type="radio" id="gender2" name="gender" value="female" />Female<br />
+    <input type="radio" id="gender3" name="gender" value="other" />Other<br />
+
+     <p>Employment situation<br />
+      <input type="checkbox" id="employment1" name="employment" value="employ" />Employ<br />
+      <input type="checkbox" id="employment2" name="employment" value="unemploy" />Not Employ<br />
+     </p>
+
+     <p>Current car brand:</p>
+     <select id="carType">
+       <option value="selectcar">not selected</option>
+       <option value="volvo">Volvo</option>
+       <option value="saab">Saab</option>
+       <option value="honda">honda</option>
+       <option value="toyota">toyota</option>
+     </select>
+
+     <p>
+       <input type="submit" value="submit" />
+     </p>
+  </form>
+</body>

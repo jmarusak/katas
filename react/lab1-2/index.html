@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <style>
+    .alert-msg {
+      background-color: red;
+      color: white;
+    }
+    .hidden-msg {
+      background-color: white;
+      color: white;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var isFormComplete = true;
+
+      var x = document.forms["identification"]["firstName"].value;
+      var e = document.getElementById("firstNameAlert");
+      if (x == "") {
+        setAlertClass(e, "alert-msg");
+        isFormComplete = false;
+      }
+      else {
+        setAlertClass(e, "hidden-msg");
+      }
+
+      x = document.forms["identification"]["lastName"].value;
+      e = document.getElementById("lastNameAlert");
+      if (x == "") {
+        setAlertClass(e, "alert-msg");
+        isFormComplete = false;
+      }
+      else {
+        setAlertClass(e, "hidden-msg");
+      }
+
+      x = document.forms["identification"]["gender"].value;
+      e = document.getElementById("genderAlert");
+      if (x == "") {
+        setAlertClass(e, "alert-msg");
+        isFormComplete = false;
+      }
+      else {
+        setAlertClass(e, "hidden-msg");
+      }
+
+      let emp1 = document.forms["identification"]["employment1"].checked;
+      let emp2 = document.forms["identification"]["employment2"].checked;
+      e = document.getElementById("employmentAlert");
+      if (!emp1 && !emp2) {
+        setAlertClass(e, "alert-msg");
+        isFormComplete = false;
+      }
+      else {
+        setAlertClass(e, "hidden-msg");
+      }
+
+      x = document.forms["identification"]["carType"].value;
+      e = document.getElementById("carTypeAlert");
+      if (x == "selectcar") {
+        setAlertClass(e, "alert-msg");
+        isFormComplete = false;
+      }
+      else {
+        setAlertClass(e, "hidden-msg");
+      }
+
+      return isFormComplete;
+    }
+
+    function setAlertClass(alertElement, newClass) {
+      if (alertElement.classList.contains("alert-msg")) {
+        alertElement.classList.remove("alert-msg")
+      }
+      if (alertElement.classList.contains("hidden-msg")) {
+        alertElement.classList.remove("hidden-msg")
+      }
+      alertElement.classList.add(newClass)
+    }
+  </script>
+</head>
+<body>
+  <p>Please enter the following mandatory information</p>
+  <form name="identification" onsubmit="return validateForm()">
+
+    <p>First Name:<input type="text" id="firstName" />
+      <span class="hidden-msg" id="firstNameAlert">First Name is mandatory</span>
+    </p>
+
+    <p>Last Name:<input type="text" id="lastName" />
+      <span class="hidden-msg" id="lastNameAlert">Last Name is mandatory</span>
+    </p>
+
+    <p>Gender Type:
+      <span class="hidden-msg" id="genderAlert">Gender Type select is a mandatory radio button</span>
+    </p>
+    <input type="radio" id="gender1" name="gender" value="male">Male<br />
+    <input type="radio" id="gender2" name="gender" value="female" />Female<br />
+    <input type="radio" id="gender3" name="gender" value="other" />Other<br />
+
+     <p>Employment situation: <span class="hidden-msg" id="employmentAlert">Employment is a mandatory checkbox button</span>
+   <br />
+       <input type="checkbox" id="employment1" name="employment" value="employ" />Employ<br />
+       <input type="checkbox" id="employment2" name="employment" value="unemploy" />Not Employ<br />
+     </p>
+
+     <p>Current car brand:
+       <span class="hidden-msg" id="carTypeAlert">Please select a car type</span>
+     </p>
+     <select id="carType">
+       <option value="selectcar">not selected</option>
+       <option value="volvo">Volvo</option>
+       <option value="saab">Saab</option>
+       <option value="honda">honda</option>
+       <option value="toyota">toyota</option>
+     </select>
+
+     <p>
+       <input type="submit" value="submit" />
+     </p>
+  </form>
+</body>
