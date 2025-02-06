@@ -61,6 +61,7 @@ graph.add_edge("query_tool", "generator")
 agentic_sql = graph.compile()
 
 #print(agentic_sql.get_graph().draw_mermaid())
+agentic_sql.get_graph().print_ascii()
 
 messages = [
     SystemMessage(
