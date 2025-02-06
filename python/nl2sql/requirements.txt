@@ -1,0 +1,5 @@
+langchain
+langgraph
+langchain-core
+langchain-google-vertexai
+langchain-community

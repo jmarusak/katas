@@ -1,0 +1,155 @@
+[
+    {
+      "name": "Sunny Day Tee",
+      "type": "t-shirt",
+      "color": "yellow",
+      "season": "summer",
+      "price": 15.99,
+      "description": "This vibrant yellow t-shirt is perfect for sunny summer days. Made from soft, breathable cotton, it features a classic crew neck and relaxed fit. The cheerful color will brighten up any outfit."
+    },
+    {
+      "name": "Denim Dream Pants",
+      "type": "pants",
+      "color": "blue",
+      "season": "fall",
+      "price": 39.99,
+      "description": "These classic blue denim pants are a versatile addition to your fall wardrobe. With a straight leg and mid-rise waist, they offer a comfortable and flattering fit. The durable denim fabric ensures they'll last through many seasons."
+    },
+    {
+      "name": "Midnight Magic Coat",
+      "type": "coat",
+      "color": "black",
+      "season": "winter",
+      "price": 89.99,
+      "description": "Stay warm and stylish in this elegant black winter coat. Crafted from a luxurious wool blend, it features a sleek silhouette and cozy collar. The timeless design makes it a perfect choice for any occasion."
+    },
+    {
+      "name": "Blossom Blouse",
+      "type": "t-shirt",
+      "color": "pink",
+      "season": "spring",
+      "price": 24.99,
+      "description": "Embrace the beauty of spring with this delicate pink t-shirt. Adorned with a subtle floral print, it exudes femininity and charm. The lightweight fabric and flowy design make it a comfortable and stylish choice."
+    },
+    {
+      "name": "Adventure Shorts",
+      "type": "pants",
+      "color": "green",
+      "season": "summer",
+      "price": 29.99,
+      "description": "Embark on your next adventure in these comfortable green shorts. Made from a quick-drying fabric, they're perfect for hiking, camping, or any outdoor activity. The relaxed fit and multiple pockets provide practicality and style."
+    },
+    {
+      "name": "Autumn Hues Sweater",
+      "type": "coat",
+      "color": "orange",
+      "season": "fall",
+      "price": 49.99,
+      "description": "Embrace the warm colors of fall with this cozy orange sweater. Knitted from a soft wool blend, it features a chunky cable knit pattern and relaxed fit. The vibrant hue will add a touch of warmth to your autumn wardrobe."
+    },
+    {
+      "name": "Nautical Vibes Top",
+      "type": "t-shirt",
+      "color": "blue",
+      "season": "summer",
+      "price": 19.99,
+      "description": "Channel your inner sailor with this nautical-inspired blue and white striped t-shirt. Made from a lightweight cotton blend, it's perfect for summer days spent by the sea. The classic design is both timeless and stylish."
+    },
+    {
+      "name": "Chic Chinos",
+      "type": "pants",
+      "color": "beige",
+      "season": "spring",
+      "price": 34.99,
+      "description": "Elevate your spring style with these versatile beige chinos. Made from a comfortable cotton blend, they offer a polished look that's perfect for both casual and formal occasions. The neutral color pairs well with a variety of tops."
+    },
+    {
+      "name": "Winter Wonderland Jacket",
+      "type": "coat",
+      "color": "white",
+      "season": "winter",
+      "price": 79.99,
+      "description": "Stay warm and cozy in this winter white jacket. Crafted from a water-resistant fabric, it features a plush lining and faux fur trim. The quilted design adds a touch of style while providing extra insulation against the cold."
+    },
+    {
+      "name": "Sunset Serenade Dress",
+      "type": "t-shirt",
+      "color": "red",
+      "season": "summer",
+      "price": 29.99,
+      "description": "Capture the essence of a summer sunset with this flowing red dress. Made from a lightweight rayon fabric, it features a flattering empire waist and delicate spaghetti straps. The vibrant color will make you stand out from the crowd."
+    },
+    {
+      "name": "Urban Explorer Jeans",
+      "type": "pants",
+      "color": "black",
+      "season": "fall",
+      "price": 44.99,
+      "description": "Conquer the city streets in style with these edgy black jeans. Featuring a slim fit and distressed detailing, they exude urban cool. The stretchy denim fabric ensures a comfortable fit for all-day wear."
+    },
+    {
+      "name": "Cozy Cabin Cardigan",
+      "type": "coat",
+      "color": "brown",
+      "season": "winter",
+      "price": 59.99,
+      "description": "Snuggle up by the fire in this cozy brown cardigan. Knitted from a soft wool blend, it features a chunky knit pattern and oversized fit. The warm neutral color complements a variety of winter outfits."
+    },
+    {
+      "name": "Spring Fling Top",
+      "type": "t-shirt",
+      "color": "green",
+      "season": "spring",
+      "price": 22.99,
+      "description": "Celebrate the arrival of spring with this cheerful green top. Made from a breathable cotton blend, it features a playful polka dot pattern and ruffled sleeves. The vibrant color will add a touch of fun to your spring wardrobe."
+    },
+    {
+      "name": "Weekend Wanderer Shorts",
+      "type": "pants",
+      "color": "khaki",
+      "season": "summer",
+      "price": 32.99,
+      "description": "Embrace your wanderlust in these comfortable khaki shorts. Made from a lightweight cotton twill, they're perfect for weekend getaways and casual outings. The relaxed fit and cargo pockets offer practicality and style."
+    },
+    {
+      "name": "Fall Foliage Vest",
+      "type": "coat",
+      "color": "burgundy",
+      "season": "fall",
+      "price": 49.99,
+      "description": "Embrace the rich colors of fall with this stylish burgundy vest. Crafted from a warm fleece fabric, it features a quilted design and snap-button closure. The versatile style can be layered over sweaters or shirts for added warmth."
+    },
+    {
+      "name": "Summer Solstice Tank",
+      "type": "t-shirt",
+      "color": "white",
+      "season": "summer",
+      "price": 17.99,
+      "description": "Stay cool and comfortable in this classic white tank top. Made from a soft cotton jersey, it features a relaxed fit and scoop neck. The versatile design can be dressed up or down for any occasion."
+    },
+    {
+      "name": "City Slicker Trousers",
+      "type": "pants",
+      "color": "grey",
+      "season": "spring",
+      "price": 39.99,
+      "description": "Make a sophisticated statement in these tailored grey trousers. Made from a wool blend fabric, they offer a polished look that's perfect for the office or a night out. The classic cut and neutral color make them a versatile addition to your wardrobe."
+    },
+    {
+      "name": "Snowy Peaks Parka",
+      "type": "coat",
+      "color": "blue",
+      "season": "winter",
+      "price": 99.99,
+      "description": "Brave the elements in style with this blue parka. Crafted from a water-resistant and windproof fabric, it features a warm down filling and faux fur-lined hood. The multiple pockets and adjustable cuffs provide added functionality."
+    },
+    {
+      "name": "Tropical Escape Sarong",
+      "type": "pants",
+      "color": "multicolor",
+      "season": "summer",
+      "price": 24.99,
+      "description": "Transport yourself to a tropical paradise with this vibrant sarong. Featuring a colorful floral print, it can be worn as a skirt, dress, or beach cover-up. The lightweight fabric is perfect for hot summer days."
+    }
+  ]
+  
