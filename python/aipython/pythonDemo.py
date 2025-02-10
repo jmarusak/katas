@@ -1,12 +1,4 @@
 # pythonDemo.py - Some tricky examples
-# AIFCA Python code Version 0.9.15 Documentation at https://aipython.org
-# Download the zip file and read aipython.pdf for documentation
-
-# Artificial Intelligence: Foundations of Computational Agents https://artint.info
-# Copyright 2017-2024 David L. Poole and Alan K. Mackworth
-# This work is licensed under a Creative Commons
-# Attribution-NonCommercial-ShareAlike 4.0 International License.
-# See: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 
 def myrange(start, stop, step=1):
     """enumerates the values from start in steps of size step that are
