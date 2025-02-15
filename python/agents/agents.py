@@ -18,7 +18,7 @@ class Simulate(Displayable):
     def __init__(self, agent, env):
         self.agent = agent
         self.env = env
-        self.percept = self.env.initial_percept
+        self.percept = self.env.initial_percept()
         self.percept_history = [self.percept]
         self.action_history = []
 

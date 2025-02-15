@@ -2,6 +2,8 @@ import random
 from agents import Agent, Environment, Simulate
 from utilities import select_from_dist
 
+import matplotlib.pyplot as plt
+
 class TP_env(Environment):
     sd = 5
     price_delta = [0, 0, 0, 21, 0, 20, 0, -64, 0, 0, 23, 0, 0, 0, -35,
@@ -25,9 +27,10 @@ class TP_env(Environment):
 
     def do(self, action):
         self.time += 1
-        
         used = select_from_dist({6:0.1, 5:0.1, 4:0.1, 3:0.3, 2:0.2, 1:0.2})
-        self.stock = self.stock - used
+        bought = action['buy']
+
+        self.stock = self.stock - used + bought
         self.stock_history.append(self.stock)
 
         self.price = round(self.price
@@ -38,15 +41,51 @@ class TP_env(Environment):
     
 
 class TP_agent(Agent):
+    def __init__(self):
+        self.avg_price = 0
+        self.buy_history = []
+
     def select_action(self, percept):
         self.price = percept['price']
         self.stock = percept['stock']
-        
-        tobuy = 0
+
+        self.avg_price = self.avg_price + (self.price - self.avg_price)*0.05
+        if self.price < 0.9*self.avg_price and self.stock < 60:
+            tobuy = 48
+        elif self.stock < 12:
+            tobuy = 12
+        else:
+            tobuy = 0
+        self.buy_history.append(tobuy)
         return {'buy': tobuy}
+
+class Plot_history(object):
+    def __init__(self, agent, env):
+        self.agent = agent
+        self.env = env
+        plt.ion()
+        plt.xlabel("Time")
+        plt.ylabel("Value")
+
+    def plot_env_hist(self):
+        num = len(env.stock_history)
+        plt.plot(range(num), env.price_history, label="Price")
+        plt.plot(range(num), env.stock_history, label="Stock")
+        plt.legend()
+
+    def plot_agent_hist(self):
+        num = len(agent.buy_history)
+        plt.bar(range(1,num+1), agent.buy_history, label="Bought")
+        plt.legend()
 
 if __name__ == "__main__":
     env = TP_env()
-    ag = TP_agent()
-    sim = Simulate(ag, env)
-    sim.go(20)
+    agent = TP_agent()
+    sim = Simulate(agent, env)
+    sim.max_display_level = 2
+    sim.go(90)
+
+    pl = Plot_history(agent, env)
+    pl.plot_env_hist()
+    pl.plot_agent_hist()
+    plt.savefig("history.png")
