@@ -11,8 +11,10 @@ class Searcher(Displayable):
 
     def initialize_frontier(self):
         self.frontier = []
+
     def empty_frontier(self):
         return self.frontier == []
+
     def add_to_frontier(self,path):
         self.frontier.append(path)
 
@@ -23,7 +25,6 @@ class Searcher(Displayable):
         while not self.empty_frontier():
             path = self.frontier.pop()
             self.num_expanded += 1
-            print(path)
             if self.problem.is_goal(path.end()):
                 return path
             else:
@@ -35,4 +36,6 @@ class Searcher(Displayable):
 #simp_delivery_graph.show(show_costs=True)
 
 searcher = Searcher(simp_delivery_graph)
-searcher.search()
+print(searcher.search())
+print(searcher.search())
+print(searcher.search())

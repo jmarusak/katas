@@ -21,7 +21,7 @@ def argmaxd(dct):
     return argmaxe(dct.items())
 
 def flip(prob):
-    return randon.random() < prob
+    return random.random() < prob
 
 def select_from_dist(item_prob_dist):
     rnd = random.random()
