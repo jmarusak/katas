@@ -40,6 +40,29 @@ git clone https://github.com/fatih/vim-go.git \
   ~/.config/nvim/pack/github/start/vim-go
 ```
 
+### Python plugin
+```
+npm install -g pyright
+```
+```
+git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig
+```
+```
+# init.vim
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+```
+- Ctrl + n: Show the autocomplete menu.
+- Ctrl + p: Navigate backward in the suggestions.
+- Ctrl + x + o: Trigger omnifunction completion (useful for LSP).
+- Ctrl + x + f: File path completion.
+- Ctrl + x + l: Whole-line completion.
+
+- K: Documentation popup on hover()
+- Ctrl + k: Signature/parameters inside function
+
+
 ### Copilot plugin
 ```
 https://github.com/github/copilot.vim.git
