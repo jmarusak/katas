@@ -1,4 +1,5 @@
-from Display import Displayable
+from display import Displayable
+from searchProblem import Path
 from searchExample import simp_delivery_graph
 
 class Searcher(Displayable):
@@ -6,7 +7,7 @@ class Searcher(Displayable):
         self.problem = problem
         self.num_expanded = 0
         self.initialize_frontier()
-        self.add_to_frontier(self.problem.start_node)
+        self.add_to_frontier(Path(problem.start_node()))
 
     def initialize_frontier(self):
         self.frontier = []
@@ -22,7 +23,16 @@ class Searcher(Displayable):
         while not self.empty_frontier():
             path = self.frontier.pop()
             self.num_expanded += 1
-        return path 
-
+            print(path)
+            if self.problem.is_goal(path.end()):
+                return path
+            else:
+                neighs = self.problem.neighbors(path.end())
+                for arc in reversed(list(neighs)):
+                    self.add_to_frontier(Path(path, arc))
+        return None
 
 #simp_delivery_graph.show(show_costs=True)
+
+searcher = Searcher(simp_delivery_graph)
+searcher.search()
