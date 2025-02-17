@@ -1,15 +1,14 @@
-from display import Displayable
 import matplotlib.pyplot as plt
 import random
 
-class Search_problem(Displayable):
+class Search_problem(object):
     def start_node(self):
         raise NotImplementedError("start_node must be implemented")
-    def is_goal(self,node):
+    def is_goal(self, node):
         raise NotImplementedError("is_goal must be implemented")
-    def neighbors(self,node):
+    def neighbors(self, node):
         raise NotImplementedError("neighbors must be implemented")
-    def heuristic(self,node):
+    def heuristic(self, node):
         return 0
 
 class Arc(object):
@@ -27,6 +26,15 @@ class Arc(object):
 
 class Search_problem_from_explicit_graph(Search_problem):
     def __init__(self, title, nodes, arcs, start=None, goals=set(), hmap={}, positions=None):
+        """Initializes a search problem from an explicit graph.
+        - nodes is a set of nodes
+        - arcs is a sequence of pairs of nodes
+        - start is a node
+        - goals is a set of nodes
+        - hmap is a heuristic map
+        - positions is a dictionary of node positions
+        """
+
         self.title = title
         self.neighs = {}
         self.nodes = nodes

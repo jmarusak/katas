@@ -39,9 +39,13 @@ coverage.xml
 .dmypy.json.*/
 
 # Pyre type checker
-.pyre/
+.pyre
 
 # VS Code settings
 .vscode/
 
 .venv/
+
+_build/
+_template/
+_static/
