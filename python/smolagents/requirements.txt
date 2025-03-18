@@ -2,3 +2,5 @@ ollama
 smolagents
 litellm[proxy]
 google-cloud-aiplatform
+selenium
+helium
