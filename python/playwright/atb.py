@@ -14,7 +14,7 @@ for url in urls:
     page = context.new_page()
     page.goto(url)
     page.click("text='Advanced options'")
-    page.click("text='Risk, Audit & Compliance'")
+#    page.click("text='Risk, Audit & Compliance'")
 
 input("Press Enter to continue...")
 browser.close()
