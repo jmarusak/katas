@@ -16,6 +16,17 @@ page.goto("https://jobs.scotiabank.com/Tangerine/go/Tangerine/2407617/?locale=en
 if page.query_selector("text='Accept All'"):
     page.click("text='Accept All'")
 
+# Rogers
+page = context.new_page()
+page.goto("https://jobs.rogers.com/search")
+
+# Bell
+page = context.new_page()
+page.goto("https://jobs.bell.ca/ca/en/search-results")
+page.click("text='Category'")
+#page.fill("input[placeholder='Search in category']", "Technology")
+#page.get_by_label("Technology").check()
+
 # RBC
 page = context.new_page()
 page.goto("https://jobs.rbc.com/ca/en/search-results")
@@ -26,33 +37,6 @@ page.get_by_label("Technology | Analytics | Research").check()
 #page.fill("input[placeholder='Search in State / Province']", "Ontario")
 #page.get_by_label("Ontario (").check()
 page.get_by_label("Sort by").select_option(label="Most recent")
-
-# Rogers
-page = context.new_page()
-page.goto("https://jobs.rogers.com/search")
-
-# Procom
-page = context.new_page()
-page.goto("https://portal.procomservices.com/jobs?loginType=contractor&lang=en")
-page.fill("input[placeholder='City or Province/State']", "Ontario")
-page.locator("text=Ontario >> nth=0").click()
-page.press("input[type='text']", "Enter")
-
-# Akkodis
-#page = context.new_page()
-#page.goto("https://www.akkodis.com/en-ca/careers/job-results?q=")
-
-# Randstad
-page = context.new_page()
-page.goto("https://www.randstad.ca/jobs/q-data/s-technologies/ontario/contract/")
-page.get_by_label("sort:").select_option(label="date")
-
-# Bell
-page = context.new_page()
-page.goto("https://jobs.bell.ca/ca/en/search-results")
-page.click("text='Category'")
-#page.fill("input[placeholder='Search in category']", "Technology")
-#page.get_by_label("Technology").check()
 
 input("Press Enter to continue...")
 context.storage_state(path="jobs.json")
