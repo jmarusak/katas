@@ -62,6 +62,42 @@ EOF
 - K: Documentation popup on hover()
 - Ctrl + k: Signature/parameters inside function
 
+### Java plugin
+
+Eclipse JDT Language Server
+```
+wget https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz
+tar -xvzf jdt-language-server-latest.tar.gz -C ~/.local/share/jdt-language-server
+```
+init.vim
+```
+lua << EOF
+require'lspconfig'.pyright.setup{}
+
+local lspconfig = require('lspconfig')
+local home = os.getenv("HOME")
+local workspace_dir = home .. "/tmp/workspace/jdtls/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+local config = {
+  cmd = {
+    'java',
+    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+    '-Dosgi.bundles.defaultStartLevel=4',
+    '-Declipse.product=org.eclipse.jdt.ls.core.product',
+    '-Dlog.level=ALL',
+    '-noverify',
+    '-Xmx1G',
+    '-jar', home .. '/.local/share/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.7.0.v20250404-1055.jar',
+    '-configuration', home .. '/.local/share/jdt-language-server/config_linux',
+    '-data', workspace_dir
+  },
+  root_dir = lspconfig.util.root_pattern('.git', 'mvnw', 'gradlew', 'build.gradle', 'pom.xml'),
+}
+lspconfig.jdtls.setup(config)
+EOF
+
+```
+
+
 
 ### Copilot plugin
 ```
