@@ -13,12 +13,16 @@ page.press("input[type='text']", "Enter")
 
 # SiSystems
 page = context.new_page()
-page.goto("https://www.sisystems.com/search/?location=5")
+page.goto("https://www.sisystems.com/search/?location=5&expertise=1,4")
 
 # Randstad
 page = context.new_page()
-page.goto("https://www.randstad.ca/jobs/q-data/s-technologies/ontario/contract/")
+page.goto("https://www.randstad.ca/jobs/q-analyst/ontario/toronto/")
 page.get_by_label("sort:").select_option(label="date")
+
+# emergiTEL
+page = context.new_page()
+page.goto("https://emergitel.catsone.com/careers/7701-General?title%5B0%5D=analyst")
 
 # Akkodis
 page = context.new_page()
