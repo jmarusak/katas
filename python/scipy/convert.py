@@ -1,7 +1,7 @@
 import re
 
 def convert_line(string):
-    l = [float(x) for x in string.strip().split("\t") if x]
+    l = [float(x) for x in string.strip().split(" ") if x]
     return l
 
 with open("dataraw.txt", "r") as f:
