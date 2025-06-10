@@ -1,2 +1,2 @@
-setup:
-	ollama run llama3.2
+run:
+	. .venv/bin/activate && python agents.py
