@@ -12,11 +12,6 @@ page.fill("input[placeholder='City or Province/State']", "Ontario")
 page.locator("text=Ontario >> nth=0").click()
 page.press("input[type='text']", "Enter")
 
-# SiSystems
-page = context.new_page()
-#page.goto("https://www.sisystems.com/search/?location=5&expertise=1,4")
-page.goto("https://www.sisystems.com/search-it-jobs/?location=5&expertise=66,13")
-
 # Akkodis
 page = context.new_page()
 page.goto("https://www.akkodis.com/en-ca/careers/job-results?q=Data%20Engineer")
