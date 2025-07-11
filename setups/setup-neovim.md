@@ -146,3 +146,35 @@ vi /opt/nvim-linux64/share/nvim/runtime/syntax/java.vim
 
 ```
 
+### Typescript plugin (neovim LSP)
+```
+npm install -g typescript-language-server typescript
+```
+
+init.vim
+```
+lua << EOF
+require 'lspconfig'.pyright.setup{
+  settings = {
+    python = {
+      analysis = {
+	typeCheckingMode = "off",
+	autoSearchPaths = true,
+	useLibraryCodeForTypes = true,	
+      },
+    },
+  },
+}
+
+require 'lspconfig'.ts_ls.setup{
+  settings = {
+    javascript = {
+      validate = true,
+    },
+    typescript = {
+      validate = true,
+    },
+  },
+}
+EOF
+```
