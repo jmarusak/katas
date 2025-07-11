@@ -1,0 +1,9 @@
+[project]
+name = "lineage"
+version = "1.0.0"
+description = "Table lineage tracking for Google BigQuery"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=1.19.0",
+]
