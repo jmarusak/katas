@@ -26,6 +26,7 @@ for num in messages[0].split():
 
     # Get email body
     body = ""
+
     if msg.is_multipart():
         for part in msg.walk():
             ctype = part.get_content_type()
@@ -46,3 +47,6 @@ for num in messages[0].split():
         # Else, if it's not text (e.g., image), body will remain an empty string
 
     print(from_)
+    print(subject)
+    print(body)
+    print("=" * 50)  # Separator for readability
