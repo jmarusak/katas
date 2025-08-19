@@ -7,7 +7,7 @@
     body {
       font-family: monospace;
       margin: 20px;
-      font-size: 16px;
+      font-size: 14px;
     }
     button {
       font-family: inherit;
@@ -29,8 +29,8 @@
     .clipboard-row textarea {
       font-family: inherit;
       font-size: inherit;
-      width: 800px;
-      height: 80px; /* Set a default height */
+      width: 1000px;
+      height: 100px; /* Set a default height */
       padding: 6px;
       border-radius: 8px;
       border: 1px solid #333;
@@ -44,6 +44,7 @@
 <body>
   <button id="pasteBtn">Paste</button>
   <button id="copyBtn">Copy</button>
+  <button id="loadBtn">Load</button>
   <button id="deleteBtn">Delete</button>
 
   <div id="clipboardTable"></div>
@@ -51,6 +52,7 @@
   <script>
     const pasteBtn = document.getElementById('pasteBtn');
     const copyBtn = document.getElementById('copyBtn');
+    const loadBtn = document.getElementById('loadBtn');
     const deleteBtn = document.getElementById('deleteBtn');
     const clipboardTable = document.getElementById('clipboardTable');
 
@@ -106,6 +108,32 @@
       }
       selectedRow.remove();
       selectedRow = null;
+    });
+
+    // Load button
+    loadBtn.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.sql,.txt'; // Suggest file types for SQL or plain text
+
+      input.onchange = e => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = event => {
+            const content = event.target.result;
+            const items = content.split(';');
+            items.forEach(item => {
+              const trimmedItem = item.trim();
+              if (trimmedItem) {
+                createRow(trimmedItem);
+              }
+            });
+          };
+          reader.readAsText(file);
+        }
+      };
+      input.click(); // Trigger the file input click
     });
   </script>
 </body>
